@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="hy">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>«Հայերի Չաթ»</title>
+    <style>
+        /* Հիմնական ոճավորում */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(145deg, #2c3e50, #16a085);
+            color: #fff;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Կոնտեյներ */
+        .container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        /* Լոգո */
+        .logo {
+            width: 160px;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.1);
+        }
+
+        /* Վերնագիր */
+        .title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #fff;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Ներբեռնելու կոճակ */
+        .download-btn {
+            text-decoration: none;
+            background: linear-gradient(90deg, #f39c12, #e74c3c);
+            color: #fff;
+            padding: 15px 35px;
+            border-radius: 50px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            text-align: center;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.4);
+            background: linear-gradient(90deg, #e74c3c, #f39c12);
+        }
+
+        .download-btn:active {
+            transform: translateY(1px);
+        }
+
+        /* Սքրինշոթների հատված */
+        .screenshots {
+            width: 100%;
+            overflow-x: auto;
+            display: flex;
+            gap: 20px;
+            padding: 20px 0;
+        }
+
+        .screenshot {
+            flex: 0 0 auto;
+            width: 250px;
+            height: 500px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .screenshot img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .screenshot:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            background: rgba(0, 0, 0, 0.9);
+            color: #ddd;
+            font-size: 0.9rem;
+            padding: 15px;
+            width: 100%;
+            position: relative;
+            bottom: 0;
+            margin-top: auto;
+        }
+
+        footer a {
+            color: #f39c12;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: #e74c3c;
+        }
+
+        /* Պատրաստում բջջային վարկած */
+        @media screen and (max-width: 768px) {
+            .title {
+                font-size: 2rem;
+            }
+
+            .download-btn {
+                font-size: 1.1rem;
+                padding: 12px 28px;
+            }
+
+            .screenshot {
+                width: 220px;
+                height: 450px;
+            }
+
+            .logo {
+                width: 130px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Գլխավոր Կոնտեյներ -->
+    <div class="container">
+        <!-- Լոգո -->
+        <img src="logo.png" alt="Հայերի Չաթ" class="logo">
+        <div class="title">Միացիր «Zrucaran Չաթին»</div>
+        <!-- Ներբեռնելու կոճակ -->
+        <a href="https://apk.e-droid.net/apk/app3325641-9xbohl.apk?v=2" class="download-btn">Ներբեռնել հավելվածը</a>
+        
+        <!-- Սքրինշոթներ -->
+        <div class="screenshots">
+            <div class="screenshot">
+                <img src="screenshot1.jpg" alt="Սքրինշոթ 1">
+            </div>
+            <div class="screenshot">
+                <img src="screenshot2.jpg" alt="Սքրինշոթ 2">
+            </div>
+            <div class="screenshot">
+                <img src="screenshot3.jpg" alt="Սքրինշոթ 3">
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2024 all rights reserved | 
+        <a href="privacy-policy-link">Privacy Policy</a>
+    </footer>
+</body>
+</html>
