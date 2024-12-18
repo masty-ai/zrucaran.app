@@ -2,99 +2,128 @@
 <html lang="hy">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>«Հայերի Չաթ»</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>zrucaran download</title>
     <style>
         /* Հիմնական ոճավորում */
-        body {
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
             font-family: 'Arial', sans-serif;
-            background: linear-gradient(145deg, #2c3e50, #16a085);
-            color: #fff;
-            overflow-x: hidden;
+            background: #f4f4f9;
+            color: #333;
+            line-height: 1.6;
             display: flex;
             flex-direction: column;
             min-height: 100vh;
         }
 
-        /* Կոնտեյներ */
-        .container {
-            flex: 1;
+        header {
+            background: linear-gradient(90deg, #2c3e50, #16a085);
+            padding: 10px 20px;
+            color: #fff;
             display: flex;
-            flex-direction: column;
+            justify-content: space-between;
             align-items: center;
-            justify-content: center;
-            padding: 20px;
         }
 
-        /* Լոգո */
         .logo {
-            width: 160px;
-            margin-bottom: 20px;
-            transition: transform 0.3s ease;
-        }
-
-        .logo:hover {
-            transform: scale(1.1);
-        }
-
-        /* Վերնագիր */
-        .title {
-            font-size: 2.5rem;
+            font-size: 1.5rem;
             font-weight: bold;
-            text-align: center;
-            margin-bottom: 20px;
-            color: #fff;
-            letter-spacing: 1px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
         }
 
-        /* Ներբեռնելու կոճակ */
-        .download-btn {
-            text-decoration: none;
-            background: linear-gradient(90deg, #f39c12, #e74c3c);
-            color: #fff;
-            padding: 15px 35px;
-            border-radius: 50px;
-            font-size: 1.3rem;
-            font-weight: bold;
-            text-align: center;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
-            margin: 20px 0;
-            position: relative;
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
         }
 
-        .download-btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.4);
-            background: linear-gradient(90deg, #e74c3c, #f39c12);
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background: #fff;
+            margin: 4px 0;
         }
 
-        .download-btn:active {
-            transform: translateY(1px);
-        }
-
-        /* Սքրինշոթների հատված */
-        .screenshots {
-            width: 100%;
-            overflow-x: auto;
+        nav {
             display: flex;
-            gap: 20px;
-            padding: 20px 0;
+            gap: 15px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1rem;
+            padding: 5px 10px;
+            transition: background 0.3s;
+        }
+
+        nav a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(145deg, #e74c3c, #f39c12);
+            color: #fff;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            background: #16a085;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            transition: transform 0.3s, background 0.3s;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            background: #2c3e50;
+            transform: translateY(-3px);
+        }
+
+        .screenshots {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .screenshots h2 {
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+
+        .screenshot-grid {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
         }
 
         .screenshot {
-            flex: 0 0 auto;
             width: 250px;
-            height: 500px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            height: 450px;
+            background: #ddd;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
             overflow: hidden;
-            position: relative;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .screenshot img {
@@ -103,67 +132,105 @@
             object-fit: cover;
         }
 
-        .screenshot:hover {
-            transform: scale(1.05);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+        .description {
+            padding: 20px;
+            text-align: center;
+            max-width: 800px;
+            margin: auto;
         }
 
-        /* Footer */
+        .description p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #555;
+        }
+
         footer {
+            background: #2c3e50;
+            color: #fff;
             text-align: center;
-            background: rgba(0, 0, 0, 0.9);
-            color: #ddd;
-            font-size: 0.9rem;
-            padding: 15px;
-            width: 100%;
-            position: relative;
-            bottom: 0;
+            padding: 10px 20px;
             margin-top: auto;
         }
 
         footer a {
             color: #f39c12;
             text-decoration: none;
-            transition: color 0.3s;
         }
 
         footer a:hover {
             color: #e74c3c;
         }
 
-        /* Պատրաստում բջջային վարկած */
+        /* Համբուրգեր նավիգացիայի համար */
         @media screen and (max-width: 768px) {
-            .title {
-                font-size: 2rem;
+            .hamburger {
+                display: flex;
             }
 
-            .download-btn {
-                font-size: 1.1rem;
-                padding: 12px 28px;
+            nav {
+                display: none;
+                flex-direction: column;
+                background: #2c3e50;
+                position: absolute;
+                top: 60px;
+                right: 20px;
+                width: 200px;
+                border-radius: 10px;
             }
 
-            .screenshot {
-                width: 220px;
-                height: 450px;
+            nav a {
+                padding: 10px;
+                text-align: center;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             }
 
-            .logo {
-                width: 130px;
+            nav a:last-child {
+                border-bottom: none;
+            }
+
+            nav.active {
+                display: flex;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Գլխավոր Կոնտեյներ -->
-    <div class="container">
-        <!-- Լոգո -->
-        <img src="logo.png" alt="Հայերի Չաթ" class="logo">
-        <div class="title">Միացիր «Zrucaran Չաթին»</div>
-        <!-- Ներբեռնելու կոճակ -->
-        <a href="https://apk.e-droid.net/apk/app3325641-9xbohl.apk?v=2" class="download-btn">Ներբեռնել հավելվածը</a>
-        
-        <!-- Սքրինշոթներ -->
-        <div class="screenshots">
+    <!-- Գլխավոր մաս -->
+    <header>
+        <div class="logo">Zrucaran</div>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <nav>
+            <a href="#description">Նկարագրություն</a>
+            <a href="#screenshots">Սքրինշոթներ</a>
+            <a href="#download">Ներբեռնել</a>
+        </nav>
+    </header>
+
+    <!-- Հերո -->
+    <div class="hero">
+        <h1>Բարի գալուստ «Zrucaran»</h1>
+        <p>Միացեք միլիոնավոր հայերին ամբողջ աշխարհից՝ հեշտ ու անվտանգ հաղորդակցման համար:</p>
+        <a href="#download" class="btn">Ներբեռնել հիմա</a>
+    </div>
+
+    <!-- Նկարագրություն -->
+    <section id="description" class="description">
+        <h2>Ծրագրի Նկարագրություն</h2>
+        <p>
+            «Հայերի Չաթ» հավելվածը նախատեսված է հայ համայնքի համար: Այն թույլ է տալիս շփվել ձեր ընտանիքի և ընկերների հետ՝ 
+            անվտանգ, արագ և հարմարավետ միջավայրում: Ուղարկեք հաղորդագրություններ, կիսվեք ֆայլերով, ստացեք ակնթարթային ծանուցումներ:
+        </p>
+    </section>
+
+    <!-- Սքրինշոթներ -->
+    <section id="screenshots" class="screenshots">
+        <h2>Սքրինշոթներ</h2>
+        <div class="screenshot-grid">
             <div class="screenshot">
                 <img src="Screenshott1.jpg" alt="Սքրինշոթ 1">
             </div>
@@ -174,12 +241,25 @@
                 <img src="Screenshot3.jpg" alt="Սքրինշոթ 3">
             </div>
         </div>
-    </div>
+    </section>
+
+    <!-- Ներբեռնում -->
+    <section id="download" class="screenshots">
+        <h2>Ներբեռնեք հիմա</h2>
+        <a href="https://apk.e-droid.net/apk/app3325641-9xbohl.apk?v=2" class="btn">Ներբեռնել Android-ի համար</a>
+    </section>
 
     <!-- Footer -->
     <footer>
-        &copy; 2024 all rights reserved | 
-        <a href="https://masty-ai.github.io/zrucaran.privacy-policy/">Privacy Policy</a>
+        &copy; 2024 zrucaran Չաթ | <a href="https://masty-ai.github.io/zrucaran.privacy-policy/">Privacy Policy</a>
     </footer>
+
+    <!-- Սցենար -->
+    <script>
+        function toggleMenu() {
+            const nav = document.querySelector('nav');
+            nav.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
